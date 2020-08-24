@@ -22,8 +22,8 @@ public class Box <T extends Fruit> {
         return false;
     }
 
-    public <F extends Fruit> void shift(Box box) {
-        for (int i = 0; i < box.getFruits().size(); i++) {
+    public void shift(Box box) {
+        for (int i = (box.getFruits().size() - 1); i >= 0; i--) {
             this.addFruit((T)box.getFruits().get(i));
             box.getFruits().remove(i);
         }
